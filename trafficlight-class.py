@@ -23,15 +23,15 @@ class TrafficLight:
         self.redX2 = (int(W/2+20))
         self.redY2 = (int(H*1/4-20))
         self.redX3 = (int(W/2-20))
-        self.redY3 = (int(H*1/4-25))
+        self.redY3 = (int(H*1/4-20))
         self.redX4 = (int(W/2-25))
-        self.redY4 = (int(H*1/4-25))
+        self.redY4 = (int(H*1/4-15))
         self.redX5 = (int(W/2+25))
-        self.redY5 = (int(H*1/4-25))
-        self.redX6 = (int(W/2-55))
-        self.redY6 = (int(H*1/4-30))
+        self.redY5 = (int(H*1/4-15))
+        self.redX6 = (int(W/2+75))
+        self.redY6 = (int(H*1/4-25))
         self.redX7 = (int(W/2+10))
-        self.redY7 = (int(H*1/4-35))
+        self.redY7 = (int(H*1/4-25))
         self.yellowX = (int(W/2))
         self.yellowY = (int(H*1/2))
         self.yellowX2 = (int(W/2+20))
@@ -39,23 +39,23 @@ class TrafficLight:
         self.yellowX3 = (int(W/2)-20)
         self.yellowY3 = (int(H*1/2-20))
         self.yellowX4 = (int(W/2-25))
-        self.yellowY4 = (int(H*1/2-5))
+        self.yellowY4 = (int(H*1/2-25))
         self.yellowX5 = (int(W/2+25))
-        self.yellowY5 = (int(H*1/2-5))
-        self.yellowX6 = (int(W/2-5))
-        self.yellowY6 = (int(H*1/2-5))
-        self.yellowX7 = (int(W/2+10))
-        self.yellowY7 = (int(H*1/2-5))
+        self.yellowY5 = (int(H*1/2-25))
+        self.yellowX6 = (int(W/2-75))
+        self.yellowY6 = (int(H*1/2-35))
+        self.yellowX7 = (int(W/2+75))
+        self.yellowY7 = (int(H*1/2-35))
         self.greenX = (int(W/2))
         self.greenY = (int(H*3/4))
         self.greenX2 = (int(W/2+20))
         self.greenY2 = (int(H*3/4-20))
         self.greenX3 = (int(W/2-20))
         self.greenY3 = (int(H*3/4-20))
-        self.greenX4 = (int(W/2-25))
-        self.greenY4 = (int(H*3/4-25))
-        self.greenX5 = (int(W/2+25))
-        self.greenY5 = (int(H*3/4-25))
+        self.greenX4 = (int(W/2-20))
+        self.greenY4 = (int(H*3/4-20))
+        self.greenX5 = (int(W/2-35))
+        self.greenY5 = (int(H*3/4-20))
         self.blinking = False
 
     def setState(self, stateStr):
@@ -80,20 +80,21 @@ class TrafficLight:
         pygame.draw.circle(ds, rgbaColor, (self.yellowX2,self.yellowY2), 10)
     def drawLighteyes4(self, rgbaColor, xyPos):
         pygame.draw.circle(ds, rgbaColor, (self.yellowX3,self.yellowY3), 10)
-
     def drawLighteyes5(self, rgbaColor, xyPos):
         pygame.draw.circle(ds, rgbaColor, (self.greenX2,self.greenY2), 10)
     def drawLighteyes6(self, rgbaColor, xyPos):
-        pygame.draw.circle(ds, rgbaColor, (self.greenX3,self.greenX3), 10)
-        
+        pygame.draw.circle(ds, rgbaColor, (self.greenX3,self.greenY3), 10)
+        #red pupils
     def drawLighteyespupils(self, rgbaColor, xyPos):
         pygame.draw.circle(ds, rgbaColor, (self.redX4,self.redY4), 3)
     def drawLighteyespupils2(self, rgbaColor, xyPos):
         pygame.draw.circle(ds, rgbaColor, (self.redX5,self.redY5), 3)
+        #yellow pupils
     def drawLighteyespupils3(self, rgbaColor, xyPos):
         pygame.draw.circle(ds, rgbaColor, (self.redX4,self.yellowY4), 3)
     def drawLighteyespupils4(self, rgbaColor, xyPos):
         pygame.draw.circle(ds, rgbaColor, (self.redX5,self.yellowY5), 3)
+        #green pupils
     def drawLighteyespupils5(self, rgbaColor, xyPos):
         pygame.draw.circle(ds, rgbaColor, (self.greenX4,self.greenY4), 3)
     def drawLighteyespupils6(self, rgbaColor, xyPos):
@@ -211,8 +212,8 @@ class TrafficLight:
             self.drawLight((255, 0, 0, 100), self.redY)
             self.drawLighteyes((255, 255, 255, 100), self.redX2)
             self.drawLighteyes((255, 255, 255, 100), self.redY2)
-            self.drawLighteyes((255, 255, 255, 100), self.redX3)
-            self.drawLighteyes((255, 255, 255, 100), self.redY3)
+            self.drawLighteyes2((255, 255, 255, 100), self.redX3)
+            self.drawLighteyes2((255, 255, 255, 100), self.redY3)
             self.drawLighteyespupils((0, 0, 0, 100), self.redY4)
             self.drawLighteyespupils((0, 0, 0, 100), self.redX4)
             self.drawLighteyespupils((0, 0, 0, 100), self.redX5)
