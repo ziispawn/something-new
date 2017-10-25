@@ -13,6 +13,7 @@ ds = ws.convert_alpha() # display surface
 FPS = 30 # frames per second setting
 fpsClock = pygame.time.Clock()
 frameNum = 1;   # variable to keep track of animation frames
+keys = pygame.key.get_pressed()
 
 class TrafficLight:
 
@@ -137,7 +138,7 @@ class TrafficLight:
 
     def draw(self):
 
-        if self.state == 'green':
+        if (keys[K_SPACE]):
             self.greenX5=int(W/2+25)+1
             self.drawLight3((0, 255, 0, 255), self.greenX)
             self.drawLight3((0, 255, 0, 255), self.greenY)
